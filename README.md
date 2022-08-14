@@ -65,6 +65,16 @@ public class LinkedList<E>{
                            }
                            return false;
                            }
+                           public E remove(int index){
+                           if(index<0||index>=size)
+                               throw new llegaArgumetException("failed");
+  Node prev=dummyHead;
+  for(int i=0;i<index;i++)
+                           prev=prev.next;
+                           prev.next=reNode.next;
+                           reNode.next=null;
+                           size--;
+                           return reNode.e;}
                            
                             
                               
