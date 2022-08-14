@@ -75,6 +75,25 @@ public class LinkedList<E>{
                            reNode.next=null;
                            size--;
                            return reNode.e;}
+                           //现在写一个LeetCode里面的题（203）
+                           public LisNode removeElements(LisNode head,int val){
+                           while(head!=null&&val==val){
+                           LisNode delNode=head;
+                           head=head.next;
+                           delNode.next=null;}
+                           if(head==null)
+                           return null;
+                           lisNode prev=head;
+                           while(prve.next.val==val){
+                           LidNode deNode=prev.neext;
+                           prev.next=deNode.next;
+                           }
+                           else
+                           prev=prev.next;
+                           }
+                           return head;
+                           }
+                           
                            
                             
                               
