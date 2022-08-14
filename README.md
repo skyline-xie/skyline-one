@@ -35,12 +35,38 @@ public class LinkedList<E>{
   public void add(int index,E e){
   if(index<0||index>size)
   throw new llegaArgumetException("failed");
-  if(index==0)
-  for(int i=0;i<index-1;i++){
+  Node prev=dummyHead;
+  for(int i=0;i<index;i++){
                               prev=prev.next;
                               }
   prev.next=new Node(e,prev.next);
   size++
-    
+                              }
+                            public void addFirdt(E e){
+                            add(0,e);
+                            }
+                            public void addList(E e){add(size,e)}
+                              public int getSize(){
+                              dummyHead=new Node(null,null);
+                              size=0;
+                            puvlic E get(int index){
+                            if(index<0||index>=size)
+                               throw new llegaArgumetException("failed");
+  Node cur=dummyHead.next;
+  for(int i=0;i<index;i++)
+                           cur=cur.next;
+ return cur.e;
+                           }
+                           public boolean contains(E e){
+                           while(cur!=null)
+                           if(cuur.e.equals(e))
+                           return ture;
+                           cur=cur.next;
+                           }
+                           return false;
+                           }
+                           
+                            
+                              
   
   
