@@ -1,0 +1,33 @@
+public class ListNode {
+    int val;
+    ListNode next;
+    ListNode (int x){val=x;
+
+    }
+}
+//这个代码用于将一个链表反转过来。
+public class Solution {
+    public ListNode reverseList(ListNode head){
+        ListNode pre=null;
+        ListNode cur=head;
+        while (cur!=null){//这里先用非递归的算法实现一下。
+            ListNode next=cur.next;
+            cur.next =pre ;
+            pre=cur;
+            cur=next;
+
+        }
+        return pre;
+    }
+}
+public class Solution2 {
+    public ListNode reverseList(ListNode head){//这串代码就是用递归来编写的了
+        if(head==null||head.next ==null){
+            return head;
+        }
+        ListNode rev=reverseList(head.next);//核心就是这里
+        head .next .next =head;//下面两行是因为上面递归结束后第一个节点没有和后面的接上。
+        head.next =null;
+        return rev;
+    }
+}
